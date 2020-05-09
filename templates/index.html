@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Productos a domicilio
+{% endblock title %}
+
+{% block content %}
+
+<!-- carga de imagenes -->
+<div class="grid-container">
+    <div class="grid-x  align-center">
+        <div class="orbit cell" role="region" aria-label="Favorite Space Pictures" data-orbit>
+            <div class="orbit-wrapper">
+                <div class="orbit-controls">
+                    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                </div>
+                <ul class="orbit-container">
+                    <li class="is-active orbit-slide">
+                        <figure class="orbit-figure">
+                            <img class="orbit-image" src="{% static 'img/amonio.jpg' %}" alt="Space">
+                            <figcaption class="orbit-caption">Amonio Cuaternario 5° Generacion.</figcaption>
+                        </figure>
+                    </li>
+                    <li class="orbit-slide">
+                        <figure class="orbit-figure">
+                            <img class="orbit-image" src="{% static 'img/grupo_amonio.jpeg' %}" alt="Space">
+                            <figcaption class="orbit-caption">Mascarilla tipo KN95</figcaption>
+                        </figure>
+                    </li>
+                    <li class="orbit-slide">
+                        <figure class="orbit-figure">
+                            <img class="orbit-image" src="{% static 'img/informacion_amonio.jpg' %}" alt="Space">
+                            <figcaption class="orbit-caption">Mascarilla tipo KN95</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        <nav class="orbit-bullets">
+            <button class="is-active" data-slide="0">
+                <span class="show-for-sr">First slide details.</span>
+                <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+            </button>
+            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+            <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+            <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>
+    </div>
+</div>
+
+<!-- FIN DE carga de imagenes -->
+
+
+<h1>REALIZA TU PEDIDO</h1>
+<form method="POST" class="cell callout grid-x grid-margin-x" enctype="multipart/form-data"> {% csrf_token %}
+    <div>
+        <label>
+            Nombre: {{form.nombre}}
+        </label>
+    </div>
+    <div>
+        <label>
+            Apellido: {{form.apellido}}
+        </label>
+    </div>
+    <div>
+        <label>
+            Correo: {{form.correo}}
+        </label>
+    </div>
+    <div>
+        <label>
+            Teléfono: {{form.telefono}}
+        </label>
+    </div>
+    <div>
+        <label>
+            Ciudad: {{form.ciudad}}
+        </label>
+    </div>
+    <div>
+        <label>
+            Sector: {{form.sector}}
+        </label>
+    </div>
+    <div>
+        <button type="submit" class="button success">SOLICITAR PEDIDO</button>
+    </div>
+</form>
+
+{% endblock content %}

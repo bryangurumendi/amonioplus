@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Limpia y Desinfecta tu hogar con Amonio Cuartenario"
+  />
+  <title>Amonio Plus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="container-header">
+      <img class="img-header" src= "{% static 'img/logo-amonio-plus.svg' %}" alt="amonio plus"></img>
+    </div>
+  </header>
+  <section>
+    <div class="container-body">
+      <div class="container-section">
+        <!-- Descripción del producto -->
+        <div class="container-description">
+          <img class="img-description" src= "{% static 'img/logo-amonio-plus.svg' %}" alt="amonio plus"></img>
+          <div class="container-invitacion">
+          <h1>Quieres cuidar a tu familia?</h1>
+          <p>
+            Limpia y desinfecta tu hogar con <strong>amonio plus,</strong> compuesto de amonio cuaternario de quinta generación que desintegra todo tipo de bacterias y virus como el <strong>covid-19</strong> ¿Quieres Probarlo?
+          </p>
+          </div>        
+        </div>
+        <!-- Fin Descripción del producto -->
+        <!-- Formulario -->
+        <form method="POST" class="form" enctype="multipart/form-data"> {% csrf_token %}
+          <input class="input-nombres" 
+          type = "text" 
+          name = "nombre" 
+          placeholder = "Nombre"
+          id= "nombre"
+          value="{{forms.nombre}}"
+          required
+          />
+          <input class="input-nombres"
+          type = "text"  
+          name = "apellido" 
+          placeholder = "Apellido"
+          id= "apellido"
+          value="{{forms.apellido}}"
+          required
+          />
+          <input
+          type = "email"  
+          name = "correo" 
+          placeholder = "Correo"
+          id= "correo"
+          value="{{forms.email}}"
+          required
+          />  
+      
+          <input  
+          type = "text" 
+          name = "telefono" 
+          placeholder = "Teléfono"
+          id= "telefono"
+          value="{{forms.telefono}}"
+          required
+          />   
+         
+          <div class="contenedor-selectores">
+            <div class="contenedor-ciudad">
+              <label class="ciudad" >
+                  Ciudad: {{form.ciudad}}
+              </label>
+            </div>
+            <div class="contenedor-sector">
+              <label class="sector">
+                  Sector: {{form.sector}}
+              </label>
+            </div>
+          </div>  
+
+    
+          <div class="checkbox">
+              <input type="checkbox" id="politicas" name="politicas" value="politicas" required></input>
+              <label for="politicas">He leido y acepto las políticas de seguridad</label>
+          </div>
+          
+          <input type = "submit" name= "boton" value = "LO QUIERO!!!" id = "boton"/>
+    
+          <div class="container-privacidad">       
+              <ul>
+                  Ver información de privacidad
+                  <li>
+                      Te informamos que los datos que de crácter personal que nos proporcionas serán tratados por Distribuidora Química Guru´s como responsable de esta web. La finalidad es para ponernos en contacto contigo para realizar la entrega del producto que quisieras adquirir. Tu legitimación se realiza a través de tu consentimiento. Debes saber que los datos que nos facilitas estarán ubicados en la base de datos de nuestro servidor. Podrás ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos en info@amonioplus.com. Para más información consulta nuestra política de privacidad.
+                  </li>
+              </ul>                
+          </div>                          
+        </form>
+        <!-- Fin del Formulario -->
+      </div>
+      <!-- imagen -->       
+    <div class="container-img-limpieza">
+      <img src= "{% static 'img/pareja-limpieza.svg' %}" class="img-limpieza" alt="limpieza">
+      </img>
+    </div>
+    <!-- Fin de la imagen -->
+    </div>
+  </section>
+  <footer>
+    <div class="container-footer">
+      <!-- <h4 class="cookies">
+        Politica de cookies
+      </h4>
+      <h4 class="footer-privacidad">
+        Politica de privacidad
+      </h4> -->
+      <h4 class="licencia">
+        Licencia de imagen
+        <a href="http://www.freepik.com" target="blank">Designed by jemastock / Freepik</a>
+      </h4>
+    </div>
+  </footer>
+</body>
+</html>
