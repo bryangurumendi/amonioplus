@@ -11,4 +11,10 @@ urlpatterns = [
         views.PedidoAmonio.as_view(),
         name='inicio',
     ),
+
+    path(
+        'succesfull/',
+        views.Exitoso.as_view(),
+        name='succesfull',
+    ),
 ]
